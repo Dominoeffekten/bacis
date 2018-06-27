@@ -1,0 +1,24 @@
+/* https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
+
+html, body {
+	height: 100%;
+	background-color: #fcfcfc
+}
+
+main,header,nav,section,article,footer{
+	width:100%;
+	max-width:100%;
+}
+
+html {
+	overflow-y: scroll;
+}
+
+body {
+	font-size:16px;
+	font-family: 'calibri', sans-serif, serif;
+	display: flex;
+	flex-direction: column;
+	letter-spacing: 1px;
+	line-height: 21px;
+}
