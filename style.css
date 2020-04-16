@@ -4,16 +4,13 @@ html, body {
 	height: 100%;
 	background-color: #fcfcfc
 }
-
 main,header,nav,section,article,footer{
 	width:100%;
 	max-width:100%;
 }
-
 html {
 	overflow-y: scroll;
 }
-
 body {
 	font-size:16px;
 	font-family: 'calibri', sans-serif, serif;
@@ -21,4 +18,41 @@ body {
 	flex-direction: column;
 	letter-spacing: 1px;
 	line-height: 21px;
+	margin: 15px;
+}
+article{
+	padding-left: 20px;
+}
+hr{
+	background-color: limegreen;
+    height: 2px;
+    border: none;
+    margin: 20px;
+}
+/* tabeller */
+table, th, td { 
+	outline: 1px solid;
+	padding: 5px;
+}
+/* input felter */
+form{
+	padding: 10px;
+    width: 50%;
+    border-radius: 12px;
+    margin: 0 auto;
+}
+input[type=text], input[type=radio],input[type=checkbox], select {
+	border: 0;
+	font-size: 16px;
+	margin: 5px;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    border: none;
+    padding: 8px 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.shadow {
+	box-shadow: 4px 4px #dad4d4;
 }
