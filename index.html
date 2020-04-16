@@ -11,7 +11,113 @@
             --background-color2: #F8D0D2;
             --color: #2B92E4;
             --text-color: #EFF2F8;
+            --white: #FFF;
+            --black: #000;
+            --grey: #788287;
         }
+        .circleText {
+            top: 11%;
+            left: 12px;
+            position: absolute;
+            color: var(--text-color);
+            width: 80%;
+            height: auto;
+        }
+        hr {
+            background-color: var(--color);
+            height: 2px;
+            border: none;
+        }
+        /* https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
+/*
+:root {
+	--background-color: #F885C1;
+	--background-color2: #F8D0D2;
+	--color: #2B92E4;
+	--text-color: #EFF2F8;
+	--white: #FFF;
+	--black: #000;
+	--grey: #788287;
+}
+*/
+html, body {
+	height: 100%;
+	font-size:16px;
+	font-family: 'calibri', sans-serif, serif;
+}
+main,header,nav,section,article,footer{
+	width:100%;
+	max-width:100%;
+}
+html {
+	overflow-y: scroll;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	letter-spacing: 1px;
+	line-height: 21px;
+	margin: 15px;
+}
+article{
+	padding-left: 20px;
+}
+hr {
+    margin: 20px 0;
+}
+footer{
+	background-color: var(--color);
+	padding: 17px 0;
+    color: var(--text-color);
+    text-align: center;
+}
+/* menu */
+.horizontal-menu{
+    width: auto;
+}
+.horizontal-menu a{
+	outline: 1px solid var(--background-color);
+    display: inline-block;
+    color: var(--color);
+    padding: 14px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.horizontal-menu a:hover{
+	outline: 1px solid var(--color);
+	color: var(--background-color);
+}
+.vertical-menu {
+	width: 200px;
+}
+.vertical-menu a {
+	background-color:var(--background-color);
+	color: var(--text-color);
+	display: block;
+	padding: 12px;
+	text-decoration: none; 
+}
+.vertical-menu a:hover {
+	background-color: var(--color);
+	color:var(--text-color);
+}
+.vertical-menu a.active {
+	background-color: var(--color);
+	color: var(--text-color);
+}
+
+/* tabeller */
+table, th, td { 
+	outline: 1px solid;
+	padding: 5px;
+}
+/* input felter */
+form{
+	background-color: none;
+}
+
+
 
     </style>
 </head>
@@ -88,8 +194,11 @@
         </article>
         <hr>
         <article>
-            <button class="gradiant-center">Click here</button>
-            <button class="gradiant-right">Click here</button>
+            <button class="gradiant-center-2">Click here</button>
+            <button class="gradiant-right-2">Click here</button>
+            <button class="gradiant-center-3">Click here</button>
+            <button class="gradiant-right-3">Click here</button>
+            <br>
             <label class="toogle">
                 <input type="checkbox">
                 <span class="slider round"></span>
@@ -97,21 +206,15 @@
         </article>
         <hr>
         <article>
-            <div class="circle gradiant-center">
+            <div class="circle gradiant-center-3">
                 <blockquote class="circleText">Experience design is the design of anything, 
                     independent of medium, or across media, with human experience as an explicit outcome, 
                     and human engagement as an explicit goal.
                 <br> <br>
                 – Jesse James Garrett</blockquote>
-    
             </div>
         </article>
         <hr>
-        <article>
-        </article>
-        <hr>
-        <article>
-        </article>
 
     </section>
 

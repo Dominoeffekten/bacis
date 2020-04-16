@@ -1,5 +1,5 @@
 /* https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
-
+/*
 :root {
 	--background-color: #F885C1;
 	--background-color2: #F8D0D2;
@@ -9,7 +9,7 @@
 	--black: #000;
 	--grey: #788287;
 }
-
+*/
 html, body {
 	height: 100%;
 	font-size:16px;
@@ -33,10 +33,7 @@ body {
 article{
 	padding-left: 20px;
 }
-hr{
-	background-color: var(--color);
-    height: 2px;
-    border: none;
+hr {
     margin: 20px 0;
 }
 footer{
@@ -115,7 +112,7 @@ input[type=text]::placeholder, textarea::placeholder{
 	height: 0;
   }
   .slider {
-	background-color: var(--background-color2);
+	background-color: var(--background-color);
     bottom: 0;
     cursor: pointer;
     left: 0;
@@ -125,7 +122,7 @@ input[type=text]::placeholder, textarea::placeholder{
     transition: .4s;
   }
   .slider:before {
-	background-color: #fff;
+	background-color: var(--white);
     bottom: 4px;
     content: "";
     height: 26px;
@@ -160,12 +157,31 @@ button{
     padding: 10px;
 	font-size: 16px;
 	border: none;
+	margin: 10px;
 }
 /* effekter */
-.gradiant-center{
+.gradiant-center-2{
 	background-image: linear-gradient(var(--background-color), var(--color));
 }
-.gradiant-right{
+button.gradiant-center-2:hover{
+	background-image: linear-gradient(var(--color), var(--background-color));
+}
+.gradiant-right-2{
+	background-image: linear-gradient(to right, var(--background-color), var(--color));
+}
+button.gradiant-right-2:hover{
+	background-image: linear-gradient(to right, var(--color), var(--background-color));
+}
+.gradiant-center-3{
+	background-image: linear-gradient(var(--color), var(--background-color), var(--color));
+}
+button.gradiant-center-3:hover{
+	background-image: linear-gradient(var(--background-color), var(--color), var(--background-color));
+}
+.gradiant-right-3{
+	background-image: linear-gradient(to right, var(--color), var(--background-color), var(--color));
+}
+button.gradiant-right-3:hover{
 	background-image: linear-gradient(to right, var(--background-color), var(--color), var(--background-color));
 }
 .shadow {
@@ -176,13 +192,5 @@ button{
 	position: relative;
 	width: 300px;
 	border-radius: 50%;
-}
-.circleText {
-	top: 11%;
-    left: 12px;
-    position: absolute;
-    color: var(--text-color);
-    width: 80%;
-    height: auto;
 }
 
