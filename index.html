@@ -6,13 +6,35 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>CSS bib</title>
     <style>
-        form{
-            background-color: lightblue;
+        :root {
+            --background-color: #F885C1;
+            --background-color2: #F8D0D2;
+            --color: #2B92E4;
+            --text-color: #EFF2F8;
         }
+
     </style>
 </head>
 <body>
+    <header>
+        <nav class="horizontal-menu">
+            <a href="#home">Home</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </nav>
+        <br>
+        <nav class="vertical-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Link 1</a>
+            <a href="#">Link 2</a>
+            <a href="#">Link 3</a>
+            <a href="#">Link 4</a>
+        </nav>
+        
+    </header>
     <section>
+        <hr>
         <article>
             <table class="">
                 <tr>
@@ -36,9 +58,11 @@
         <article>
             <form class="shadow">
                 <label for="fname">First name:</label><br>
-                <input type="text" name="fname"><br>
+                <input type="text" name="fname" placeholder="First name"><br>
                 <label for="lname">Last name:</label><br>
-                <input type="text" name="lname"><br>
+                <input type="text" name="lname" placeholder="Last name"><br>
+                <label for="comment">Comment:</label><br>
+                <textarea rows="4" cols="50" name="comment" placeholder="Comment..."></textarea><br>
                 <p></p>
                 <input type="radio" name="gender" value="male">
                 <label for="male">Male</label><br>
@@ -64,9 +88,23 @@
         </article>
         <hr>
         <article>
+            <button class="gradiant-center">Click here</button>
+            <button class="gradiant-right">Click here</button>
+            <label class="toogle">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
         </article>
         <hr>
         <article>
+            <div class="circle gradiant-center">
+                <blockquote class="circleText">Experience design is the design of anything, 
+                    independent of medium, or across media, with human experience as an explicit outcome, 
+                    and human engagement as an explicit goal.
+                <br> <br>
+                – Jesse James Garrett</blockquote>
+    
+            </div>
         </article>
         <hr>
         <article>
@@ -77,7 +115,9 @@
 
     </section>
 
-
+    <footer>
+        &copy;
+    </footer>
 
 
 </body>

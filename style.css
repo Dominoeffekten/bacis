@@ -1,8 +1,19 @@
 /* https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
 
+:root {
+	--background-color: #F885C1;
+	--background-color2: #F8D0D2;
+	--color: #2B92E4;
+	--text-color: #EFF2F8;
+	--white: #FFF;
+	--black: #000;
+	--grey: #788287;
+}
+
 html, body {
 	height: 100%;
-	background-color: #fcfcfc
+	font-size:16px;
+	font-family: 'calibri', sans-serif, serif;
 }
 main,header,nav,section,article,footer{
 	width:100%;
@@ -11,9 +22,8 @@ main,header,nav,section,article,footer{
 html {
 	overflow-y: scroll;
 }
+
 body {
-	font-size:16px;
-	font-family: 'calibri', sans-serif, serif;
 	display: flex;
 	flex-direction: column;
 	letter-spacing: 1px;
@@ -24,11 +34,52 @@ article{
 	padding-left: 20px;
 }
 hr{
-	background-color: limegreen;
+	background-color: var(--color);
     height: 2px;
     border: none;
-    margin: 20px;
+    margin: 20px 0;
 }
+footer{
+	background-color: var(--color);
+	padding: 17px 0;
+    color: var(--text-color);
+    text-align: center;
+}
+/* menu */
+.horizontal-menu{
+    width: auto;
+}
+.horizontal-menu a{
+	outline: 1px solid var(--background-color);
+    display: inline-block;
+    color: var(--color);
+    padding: 14px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+.horizontal-menu a:hover{
+	outline: 1px solid var(--color);
+	color: var(--background-color);
+}
+.vertical-menu {
+	width: 200px;
+}
+.vertical-menu a {
+	background-color:var(--background-color);
+	color: var(--text-color);
+	display: block;
+	padding: 12px;
+	text-decoration: none; 
+}
+.vertical-menu a:hover {
+	background-color: var(--color);
+	color:var(--text-color);
+}
+.vertical-menu a.active {
+	background-color: var(--color);
+	color: var(--text-color);
+}
+
 /* tabeller */
 table, th, td { 
 	outline: 1px solid;
@@ -36,16 +87,67 @@ table, th, td {
 }
 /* input felter */
 form{
+	background-color: var(--background-color);
 	padding: 10px;
     width: 50%;
     border-radius: 12px;
     margin: 0 auto;
 }
-input[type=text], input[type=radio],input[type=checkbox], select {
-	border: 0;
+input[type=text], input[type=radio],input[type=checkbox], textarea, select {
+	border: none;
 	font-size: 16px;
 	margin: 5px;
+	padding: 5px;
 }
+input[type=text]::placeholder, textarea::placeholder{
+	color: var(--grey);
+}
+/* toogle */
+.toogle {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+  }
+  .toogle input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+  }
+  .slider {
+	background-color: var(--background-color2);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  .slider:before {
+	background-color: #fff;
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px
+  }
+  input:checked + .slider {
+	background-color: var(--color);
+  }
+  input:checked + .slider:before {
+    transform: translateX(26px);
+	}
+  .slider.round {
+	border-radius: 34px;
+  }
+  .slider.round:before {
+	border-radius: 50%;
+  }
+
+
 input[type=button], input[type=submit], input[type=reset] {
     border: none;
     padding: 8px 16px;
@@ -53,6 +155,34 @@ input[type=button], input[type=submit], input[type=reset] {
     cursor: pointer;
     font-size: 16px;
 }
-.shadow {
-	box-shadow: 4px 4px #dad4d4;
+button{
+	color:var(--text-color);
+    padding: 10px;
+	font-size: 16px;
+	border: none;
 }
+/* effekter */
+.gradiant-center{
+	background-image: linear-gradient(var(--background-color), var(--color));
+}
+.gradiant-right{
+	background-image: linear-gradient(to right, var(--background-color), var(--color), var(--background-color));
+}
+.shadow {
+	box-shadow: 5px 5px 15px #cfcfcf;
+}
+.circle{
+	height: 300px;
+	position: relative;
+	width: 300px;
+	border-radius: 50%;
+}
+.circleText {
+	top: 11%;
+    left: 12px;
+    position: absolute;
+    color: var(--text-color);
+    width: 80%;
+    height: auto;
+}
+
