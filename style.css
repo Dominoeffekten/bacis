@@ -1,5 +1,5 @@
-/* https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
-/*
+
+
 :root {
 	--background-color: #F885C1;
 	--background-color2: #F8D0D2;
@@ -9,32 +9,45 @@
 	--black: #000;
 	--grey: #788287;
 }
-*/
+/*---------------
+
+	Generel
+
+
+----------------*/
 html, body {
 	height: 100%;
 	font-size:16px;
 	font-family: 'calibri', sans-serif, serif;
 }
-main,header,nav,section,article,footer{
+header,nav,main,section,article,footer{
 	width:100%;
 	max-width:100%;
 }
 html {
 	overflow-y: scroll;
 }
-
-body {
-	display: flex;
-	flex-direction: column;
-	letter-spacing: 1px;
-	line-height: 21px;
-	margin: 15px;
-}
-article{
-	padding-left: 20px;
+main{
+	width:90%;
+	margin: 0 auto;
 }
 hr {
     margin: 20px 0;
+}
+/*---------------
+
+	Sticky footer
+
+
+https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ 
+----------------*/
+body {
+	display: flex;
+  	min-height: 100vh;
+  	flex-direction: column;
+}
+main{
+	flex: 1;
 }
 footer{
 	background-color: var(--color);
@@ -42,56 +55,83 @@ footer{
     color: var(--text-color);
     text-align: center;
 }
-/* menu */
-.horizontal-menu{
-    width: auto;
+/*---------------
+
+	Menu
+
+----------------*/
+header{
+	height: auto;
+	width: 100%;
 }
-.horizontal-menu a{
-	outline: 1px solid var(--background-color);
-    display: inline-block;
-    color: var(--color);
-    padding: 14px;
-    margin: 0 10px;
-    text-decoration: none;
+/*  Horizontal navbar */
+.horizontal-menu ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: var(--color);
 }
-.horizontal-menu a:hover{
-	outline: 1px solid var(--color);
-	color: var(--background-color);
+  
+.horizontal-menu li {
+	float: left;
 }
-.vertical-menu {
+  
+.horizontal-menu li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+  
+.horizontal-menu  li a:hover {
+	background-color: var(--background-color);
+}
+
+/*  Vertical menu */
+.vertical-menu  ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
 	width: 200px;
 }
-.vertical-menu a {
+.vertical-menu li a {
+	display: block;
+	color: #000;
+	padding: 8px 16px;
+	text-decoration: none;
 	background-color:var(--background-color);
 	color: var(--text-color);
-	display: block;
-	padding: 12px;
-	text-decoration: none; 
-}
-.vertical-menu a:hover {
+  }
+  .vertical-menu  li a:hover:not(.active) {
 	background-color: var(--color);
 	color:var(--text-color);
 }
-.vertical-menu a.active {
+.vertical-menu li a.active {
 	background-color: var(--color);
 	color: var(--text-color);
 }
 
-/* tabeller */
+/*---------------
+
+	Table
+
+----------------*/
 table, th, td { 
 	outline: 1px solid;
 	padding: 5px;
 }
-/* input felter */
+/*---------------
+
+	Form
+	Input
+
+----------------*/
 form{
-	background-color: var(--background-color);
-	padding: 10px;
-    width: 50%;
-    border-radius: 12px;
-    margin: 0 auto;
+	width:50%;
 }
 input[type=text], input[type=radio],input[type=checkbox], textarea, select {
-	border: none;
 	font-size: 16px;
 	margin: 5px;
 	padding: 5px;
@@ -99,7 +139,26 @@ input[type=text], input[type=radio],input[type=checkbox], textarea, select {
 input[type=text]::placeholder, textarea::placeholder{
 	color: var(--grey);
 }
-/* toogle */
+input[type=button], input[type=submit], input[type=reset] {
+    border: none;
+    padding: 8px 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button{
+	color:var(--black);
+    padding: 10px;
+	font-size: 16px;
+	border: none;
+	margin: 10px;
+	cursor: pointer;
+}
+/*---------------
+
+	Toogle
+
+----------------*/
 .toogle {
 	position: relative;
 	display: inline-block;
@@ -145,21 +204,11 @@ input[type=text]::placeholder, textarea::placeholder{
   }
 
 
-input[type=button], input[type=submit], input[type=reset] {
-    border: none;
-    padding: 8px 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    font-size: 16px;
-}
-button{
-	color:var(--text-color);
-    padding: 10px;
-	font-size: 16px;
-	border: none;
-	margin: 10px;
-}
-/* effekter */
+/*---------------
+
+	Effects
+
+----------------*/
 .gradiant-center-2{
 	background-image: linear-gradient(var(--background-color), var(--color));
 }
@@ -192,5 +241,12 @@ button.gradiant-right-3:hover{
 	position: relative;
 	width: 300px;
 	border-radius: 50%;
+}
+.circleText{
+	height: auto;
+    width: 74%;
+    text-align: center;
+    margin: auto;
+    padding: 55px 0;
 }
 

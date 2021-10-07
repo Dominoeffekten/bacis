@@ -5,143 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>CSS bib</title>
-    <style>
-        :root {
-            --background-color: #F885C1;
-            --background-color2: #F8D0D2;
-            --color: #2B92E4;
-            --text-color: #EFF2F8;
-            --white: #FFF;
-            --black: #000;
-            --grey: #788287;
-        }
-        .circleText {
-            top: 11%;
-            left: 12px;
-            position: absolute;
-            color: var(--text-color);
-            width: 80%;
-            height: auto;
-        }
-        hr {
-            background-color: var(--color);
-            height: 2px;
-            border: none;
-        }
-        /* https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/ */
-/*
-:root {
-	--background-color: #F885C1;
-	--background-color2: #F8D0D2;
-	--color: #2B92E4;
-	--text-color: #EFF2F8;
-	--white: #FFF;
-	--black: #000;
-	--grey: #788287;
-}
-*/
-html, body {
-	height: 100%;
-	font-size:16px;
-	font-family: 'calibri', sans-serif, serif;
-}
-main,header,nav,section,article,footer{
-	width:100%;
-	max-width:100%;
-}
-html {
-	overflow-y: scroll;
-}
-
-body {
-	display: flex;
-	flex-direction: column;
-	letter-spacing: 1px;
-	line-height: 21px;
-	margin: 15px;
-}
-article{
-	padding-left: 20px;
-}
-hr {
-    margin: 20px 0;
-}
-footer{
-	background-color: var(--color);
-	padding: 17px 0;
-    color: var(--text-color);
-    text-align: center;
-}
-/* menu */
-.horizontal-menu{
-    width: auto;
-}
-.horizontal-menu a{
-	outline: 1px solid var(--background-color);
-    display: inline-block;
-    color: var(--color);
-    padding: 14px;
-    margin: 0 10px;
-    text-decoration: none;
-}
-.horizontal-menu a:hover{
-	outline: 1px solid var(--color);
-	color: var(--background-color);
-}
-.vertical-menu {
-	width: 200px;
-}
-.vertical-menu a {
-	background-color:var(--background-color);
-	color: var(--text-color);
-	display: block;
-	padding: 12px;
-	text-decoration: none; 
-}
-.vertical-menu a:hover {
-	background-color: var(--color);
-	color:var(--text-color);
-}
-.vertical-menu a.active {
-	background-color: var(--color);
-	color: var(--text-color);
-}
-
-/* tabeller */
-table, th, td { 
-	outline: 1px solid;
-	padding: 5px;
-}
-/* input felter */
-form{
-	background-color: none;
-}
-
-
-
-    </style>
+ 
 </head>
 <body>
     <header>
         <nav class="horizontal-menu">
-            <a href="#home">Home</a>
-            <a href="#news">News</a>
-            <a href="#contact">Contact</a>
-            <a href="#about">About</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+            </ul>
         </nav>
         <br>
         <nav class="vertical-menu">
-            <a href="#" class="active">Home</a>
-            <a href="#">Link 1</a>
-            <a href="#">Link 2</a>
-            <a href="#">Link 3</a>
-            <a href="#">Link 4</a>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+            </ul>
         </nav>
         
     </header>
-    <section>
+    <main>
         <hr>
         <article>
+            <h2>Table</h2>
             <table class="">
                 <tr>
                   <th>Firstname</th>
@@ -162,43 +50,56 @@ form{
         </article>
         <hr>
         <article>
-            <form class="shadow">
+            <h2>Form</h2>
+            <form>
                 <label for="fname">First name:</label><br>
                 <input type="text" name="fname" placeholder="First name"><br>
                 <label for="lname">Last name:</label><br>
                 <input type="text" name="lname" placeholder="Last name"><br>
                 <label for="comment">Comment:</label><br>
                 <textarea rows="4" cols="50" name="comment" placeholder="Comment..."></textarea><br>
-                <p></p>
-                <input type="radio" name="gender" value="male">
-                <label for="male">Male</label><br>
-                <input type="radio" name="gender" value="female">
-                <label for="female">Female</label><br>
-                <p></p>
-                <input type="checkbox" name="vehicle1" value="Bike">
-                <label for="vehicle1"> I have a bike</label><br>
-                <input type="checkbox" name="vehicle2" value="Car">
-                <label for="vehicle2"> I have a car</label><br>
-                <input type="checkbox"  name="vehicle3" value="Boat">
-                <label for="vehicle3"> I have a boat</label><br>
-
-                <select name="cars">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="fiat">Fiat</option>
-                    <option value="audi">Audi</option>
-                </select><br>
-
-                <input type="submit" value="Submit">
+                <fieldset>
+                    <legend>Gender</legend>
+                    <input type="radio" name="gender" value="male">
+                    <label for="male">Male</label><br>
+                    <input type="radio" name="gender" value="female">
+                    <label for="female">Female</label><br>
+                </fieldset>
+                <fieldset>
+                    <legend>Checkbox</legend>
+                    <input type="checkbox" name="vehicle1" value="Bike">
+                    <label for="vehicle1"> I have a bike</label><br>
+                    <input type="checkbox" name="vehicle2" value="Car">
+                    <label for="vehicle2"> I have a car</label><br>
+                    <input type="checkbox"  name="vehicle3" value="Boat">
+                    <label for="vehicle3"> I have a boat</label><br>
+                </fieldset>
+                
+                <fieldset>
+                    <legend>Cars</legend>
+                    <select name="cars">
+                        <option value="volvo">Volvo</option>
+                        <option value="saab">Saab</option>
+                        <option value="fiat">Fiat</option>
+                        <option value="audi">Audi</option>
+                    </select>
+                </fieldset>
+                <button type="submit" value="Submit">Sumbit</button>
               </form>
         </article>
         <hr>
+
         <article>
-            <button class="gradiant-center-2">Click here</button>
-            <button class="gradiant-right-2">Click here</button>
-            <button class="gradiant-center-3">Click here</button>
-            <button class="gradiant-right-3">Click here</button>
+            <h2>Gradiant</h2>
+            <div class="gradiant-center-2"><p>This is a div</p></div>
+            <div class="gradiant-right-2"><p>This is a div</p></div>
+            <div class="gradiant-center-3"><p>This is a div</p></div>
+            <div class="gradiant-right-3"><p>This is a div</p></div>
             <br>
+        </article>
+        <hr>
+        <article>
+            <h2>Toogle</h2>
             <label class="toogle">
                 <input type="checkbox">
                 <span class="slider round"></span>
@@ -207,17 +108,17 @@ form{
         <hr>
         <article>
             <div class="circle gradiant-center-3">
-                <blockquote class="circleText">Experience design is the design of anything, 
+                <p class="circleText">Experience design is the design of anything, 
                     independent of medium, or across media, with human experience as an explicit outcome, 
                     and human engagement as an explicit goal.
-                <br> <br>
-                – Jesse James Garrett</blockquote>
+                <br>
+                – Jesse James Garrett</p>
             </div>
         </article>
         <hr>
 
     </section>
-
+    </main>
     <footer>
         &copy;
     </footer>
